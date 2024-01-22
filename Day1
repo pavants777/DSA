@@ -1,0 +1,43 @@
+/* Q1 */
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int x,y;
+    cin>>x>>y;
+    cout<<x*y<<endl;
+    return 0;
+}
+
+
+/* Q2 */
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    char ch = 'U';
+    cout<<(int)ch<<endl;
+    return 0;
+}
+
+/* Q3 */
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int l,b;
+    cin>>l>>b;
+    cout<<l*b<<endl;
+    return 0;
+}
+
+/* Q4 */
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int a;
+    cin>>a;
+    cout<<pow(a,3)<<endl;
+    return 0;
+}
