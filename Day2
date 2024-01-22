@@ -1,0 +1,62 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+/*Q1*/
+void Question1(){
+    int a,b;
+    cin>>a>>b;
+    cout<<(a<50 && a<b)<<endl;
+    return ;
+}
+
+/*Q2*/
+
+void Question2(){
+    int total = 45;
+    int boys = 25;
+    int GradeAGirls =0.8*total - 17;
+    cout<<GradeAGirls<<endl;
+}
+
+/*Q3*/
+void Question3(){
+    int a;
+    cin>>a;
+    int secondlast=(a/10)%10;
+    int first=a/10000;
+    cout<<first+secondlast<<endl;
+}
+
+/*Q4*/
+void Question4(){
+   int a;
+   cin>>a;
+   /*if it's 3 digits number*/
+   cout<<(a%10)+(a/10)%10+(a/100)%10<<endl;
+}
+
+
+/*Q5*/
+void Question5(){
+    int a,b;
+    cin>>a>>b;
+    cout<<"Sum = "<<a+b<<endl;
+    cout<<"Diff = "<<a-b<<endl;
+    cout<<"Multi ="<<a*b<<endl;
+    try{
+        if(b==0)
+        throw b;
+        cout<<"Div = "<<a/b<<endl;
+    }catch(int b){
+        cout<<"B is zero "<<endl;
+    }
+}
+
+int main(){
+    Question1();
+    Question2();
+    Question3();
+    Question4();
+    Question5();
+    return 0;
+}
