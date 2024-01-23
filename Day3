@@ -1,0 +1,59 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+//Q1//
+int square()
+{
+    int l,b;
+    cout<<"Enter length and breadth\n";
+    cin>>l>>b;
+    if(l==b){
+        cout<<"It's a square"<<endl;
+    }
+    else{
+        cout<<"it's rectangle\n";
+    }
+}
+
+//Q2//
+int adsolute()
+{
+    int a;
+    cin>>a;
+    return abs(a);
+}
+
+//Q3//
+int proloss()
+{
+    float SP,CP;
+    cout<<"enter cost price\n";
+    cin>>CP;
+    cout<<"enter selling price\n";
+    cin>>SP;
+    if(SP>CP){
+        cout<<"PROFIT"<<(SP-CP);
+    }
+    else{
+        cout<<"LOSS"<<(CP-SP);
+    }
+} 
+//Q4//
+int positive()
+{
+    int num;
+    cout<<"Enter any number";
+    if(num<0){
+        cout<<"The number is negative skipped\n";
+    }
+    else{
+        cout<<"number is"<<num;
+    }
+}
+int main()
+{
+    square();
+    adsolute();
+    proloss();
+    positive();
+}
