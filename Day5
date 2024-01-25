@@ -43,8 +43,25 @@ public :
     }
     
     void Question2(){
-     
-    } 
+      int num = 1;
+        cout<<"\n Enter the Number "<<endl;
+        cin>>size;
+      
+       
+      for(int i=0;i<size;i++){
+        for(int j=0;j<size-i-1;j++){
+          cout<<" ";
+        }
+        for(int j=size-i-1;j<size;j++){
+          while (!isPrime(num)) {
+                    num++;
+            }
+                cout<<num;
+                num++;
+         }
+        cout<<endl;
+       }
+    }  
     
     void Question3(){
       int num ;
