@@ -69,6 +69,19 @@ public :
         }
      }
   }
+
+void Question4(){
+    int row,column;
+    cout<<"Enter the row and column"<<endl;
+    cin>>row>>column;
+    
+    for(int i=0;i<row;i++){
+        for(int j=0;j<column;j++){
+            cout<<"*";
+        }
+        cout<<endl;
+     }
+  }
 };
 
 
@@ -76,4 +89,5 @@ int main(){
     Solution obj;
     obj.Question1();
     obj.Question3();
+    obj.Question4();
 }
