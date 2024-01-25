@@ -105,6 +105,7 @@ void Question4(){
 int main(){
     Solution obj;
     obj.Question1();
+    obj.Question2();
     obj.Question3();
     obj.Question4();
 }
