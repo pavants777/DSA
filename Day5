@@ -48,6 +48,7 @@ public :
     
     void Question3(){
       int num ;
+      vector<pair<int,int>> ans;
       cout<<"Enter a number "<<endl;
       cin>>num;
       
@@ -57,12 +58,17 @@ public :
          }
       for (int i = 2; i <= num / 2; i++) {
             if (isPrime(i) && isPrime(num - i)) {
-                cout <<i<<" + "<<(num - i)<< endl;
-                return;
+               ans.push_back({i, num - i}); 
             }
         }
+    if(ans.size()==0)
      cout << "Number can't be expressed as Sum of prime Number" << endl;
-    }
+    else{
+          for (auto it : ans) {
+            cout << it.first << " + " << it.second << endl;
+        }
+     }
+  }
 };
 
 
