@@ -1,0 +1,73 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class Solution{
+public :
+    void Question1(){
+        for(int i=0;i<5;i++){
+            for(int j=0;j<5-i-1;j++){
+                cout<<" ";
+            }
+            for(int j=5-i-1;j<5;j++){
+                cout<<(char)(j-(5-i-1)+'A');
+            }
+            for(int j=0;j<i;j++){
+               cout<<(char)((i+j+1)+'A');
+            }
+            cout<<endl;
+        }
+        for(int i=0;i<5-1;i++){
+            for(int j=0;j<i+1;j++){
+                cout<<" ";
+            }
+            for(int j=i+1;j<5;j++){
+                cout<<(char)((j-i-1)+'A');
+            }
+            for(int j=0;j<(5-i-2);j++){
+               cout<<(char)((5+i-1)+j+'A');
+            } 
+            cout<<endl;
+        }
+    }
+    
+     bool isPrime(int n) {
+        if (n <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= sqrt(n); i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    void Question2(){
+     
+    } 
+    
+    void Question3(){
+      int num ;
+      cout<<"Enter a number "<<endl;
+      cin>>num;
+      
+       if (num % 2 != 0 || num <= 2) {
+            cout << "Number can't be expressed as Sum of prime Number" << endl;
+            return;
+         }
+      for (int i = 2; i <= num / 2; i++) {
+            if (isPrime(i) && isPrime(num - i)) {
+                cout <<i<<" + "<<(num - i)<< endl;
+                return;
+            }
+        }
+     cout << "Number can't be expressed as Sum of prime Number" << endl;
+    }
+};
+
+
+int main(){
+    Solution obj;
+    obj.Question1();
+    obj.Question3();
+}
