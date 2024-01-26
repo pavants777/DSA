@@ -1,0 +1,84 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+class Solution{
+    
+public : 
+    void Question1(){
+        for(int i=1;i<=5;i++){
+            cout<<i*i<<" ";
+        }
+        cout<<endl;
+        return ;
+    }
+    
+    void Question2(){
+        int rad;
+        cout<<"Enter the radius of Circle"<<endl;
+        cin>>rad;
+        cout<<"Area of Circle ="<<(double)(3.14*rad*rad)<<endl;
+        cout<<"Circumference ="<<(double)(3.14*2*rad)<<endl;
+        return;
+    }
+    
+    void Question3(){
+        int age;
+        cout<<"Enter the Age of Person"<<endl;
+        cin>>age;
+        try{
+            if(age<18)
+            throw age;
+            cout<<"YES"<<endl;
+        }catch(int age){
+            cout<<"NO"<<endl;
+        }
+    }
+    
+    void Question4(){
+        int a,b;
+        cout<<"Enter the value of a and b"<<endl;
+        cin>>a>>b;
+        for(int i=a;i<=b;i++){
+            if(i%2!=0){
+                cout<<i<<" ";
+            }
+        }
+        cout<<endl;
+    }
+    
+   bool isPrime(int n) {
+        if (n <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= sqrt(n); i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    
+    void Question5(){
+        int a,b;
+        cout<<"Enter the value of a and b"<<endl;
+        cin>>a>>b;
+        for(int i=a;i<=b;i++){
+            if(isPrime(i)){
+                cout<<i<<" ";
+            }
+        }
+        cout<<endl;
+    }
+};
+
+
+int main(){
+   Solution obj;
+   obj.Question1();
+   obj.Question2();
+   obj.Question3();
+   obj.Question4();
+   obj.Question5();
+}
