@@ -1,1 +1,44 @@
 
+#include<bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        	int k=1;
+	for(int i=1; i<nums.size(); i++)        
+		if(nums[i]!=nums[i-1]) nums[k++] = nums[i];     
+	return k;
+    }
+};
+
+int main(){
+    Solution obj;
+    vector<int> nums = {0,0,1,1,1,2,2,3,3,4};
+    int sizeofNum = obj.removeDuplicates(nums);
+    cout<<sizeofNum<<endl;
+    return 0;
+}
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+         int naturalNum = 0;
+         int missNum = 0;
+         for(int i=0;i<=nums.size();i++) naturalNum^=i;
+         for(int i=0;i<nums.size();i++) missNum^=nums[i];
+         return naturalNum^missNum;
+    }
+};
+
+int main(){
+    Solution obj;
+    vector<int> nums = {0,1,2,3,5,6};
+    int missingNumber = obj.missingNumber(nums);
+    cout<<missingNumber<<endl;
+    return 0;
+}
