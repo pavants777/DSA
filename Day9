@@ -1,0 +1,38 @@
+ https://leetcode.com/problems/single-number/
+ https://leetcode.com/problems/rotate-array/
+
+
+class Solution {
+public:
+    int findDuplicate(vector<int>& nums) {
+        int low = 1, high = nums.size() - 1, cnt;
+        
+        while(low <=  high)
+        {
+            int mid = low + (high - low) / 2;
+            cnt = 0;
+            for(int n : nums)
+            {
+                if(n <= mid)
+                    ++cnt;
+            }
+            if(cnt <= mid)
+                low = mid + 1;
+            else
+                high = mid - 1;
+            
+        }
+        return low;
+    }
+};
+
+
+class Solution {
+public:
+    void rotate(vector<int>& nums, int k) {
+        k = k%nums.size();
+        reverse(nums.begin(),nums.begin()+(nums.size()-k));
+        reverse(nums.begin()+(nums.size()-k),nums.end());
+        reverse(nums.begin(),nums.end());
+    }
+};
