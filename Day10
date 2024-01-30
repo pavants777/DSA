@@ -1,0 +1,36 @@
+https://leetcode.com/problems/sort-colors/
+https://leetcode.com/problems/number-of-senior-citizens/
+
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+       int low = 0;
+       int mid = 0;
+       int high = nums.size()-1;
+
+       while(mid<=high){
+           if(nums[mid]==0){
+               swap(nums[low++],nums[mid++]);
+           }
+           else if(nums[mid]==1){
+               mid++;
+           }else{
+               swap(nums[high--],nums[mid]);
+           }
+       }  
+    }
+};
+
+class Solution {
+public:
+    int countSeniors(vector<string>& details) {
+        int cnt = 0;
+
+        for(int i=0;i<details.size();i++){
+            if((details[i][11]-'0')*10 +(details[i][12]-'0')>60){
+                cnt++;
+            }
+        }
+        return cnt;
+    }
+};
