@@ -1,5 +1,5 @@
 https://leetcode.com/problems/search-insert-position/description/
-
+https://leetcode.com/problems/sort-the-people/description/
 
 
 class Solution {
@@ -13,5 +13,31 @@ public:
             }
         }
         return nums.size();
+    }
+};
+
+
+
+class Solution {
+public:
+    static  bool cmp(pair<string, int>& a, pair<string, int>& b) 
+    { 
+          return a.second > b.second; 
+    } 
+    vector<string> sortPeople(vector<string>& names, vector<int>& heights) {
+        vector<pair<string,int>> A;
+
+        for(int i=0;i<names.size();i++){
+            A.push_back({names[i],heights[i]});
+        }
+
+        sort(A.begin(),A.end(),cmp);
+
+        vector<string> ans;
+
+       for (auto& it : A) {
+         ans.push_back(it.first);
+        }
+        return ans;
     }
 };
