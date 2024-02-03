@@ -1,0 +1,45 @@
+https://leetcode.com/problems/pascals-triangle/
+https://leetcode.com/problems/length-of-last-word/
+
+
+
+class Solution {
+public:
+    vector<int> find(int n){
+        vector<int> temp;
+
+        temp.push_back(1);
+        int value = 1;
+        for(int i=1;i<n;i++){
+            value *= (n-i);
+            value /= i;
+            temp.push_back(value);
+        }
+        return temp;
+    }
+    vector<vector<int>> generate(int numRows) {
+        vector<vector<int>> ans;
+
+        for(int i=1;i<=numRows;i++){
+            ans.push_back(find(i));
+        }
+        return ans;
+    }
+};
+
+
+class Solution {
+public:
+    int lengthOfLastWord(string s) {
+        int len = 0;
+        int size = s.length()-1;
+
+        while(size >= 0 && s[size] == ' ') size--;
+
+        while(size >=0 && s[size]!= ' '){
+            len++;
+            size--;
+        }
+        return len;
+    }
+};
