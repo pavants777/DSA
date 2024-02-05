@@ -1,0 +1,60 @@
+https://leetcode.com/problems/set-matrix-zeroes/
+https://leetcode.com/problems/subarray-sum-equals-k/
+
+
+class Solution {
+public:
+    void setZeroes(vector<vector<int>>& matrix) {
+        int m=matrix[0].size();
+        int n=matrix.size();
+        vector<int> col(m,1);
+        vector<int> row(n,1);
+      
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+                if(matrix[i][j]==0)
+                {
+                    col[j]=0;
+                    row[i]=0;
+                }
+            }
+        }
+
+
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+                if(col[j]==0 || row[i]==0)
+                {
+                    matrix[i][j]=0;
+                }
+            }
+        }
+
+
+    }
+};
+
+
+class Solution {
+public:
+    int subarraySum(vector<int>& nums, int k) {
+        unordered_map<int,int> hash;
+        long long sum=0;
+        hash[sum]=1;
+        int cnt=0;
+        for(int i=0;i<nums.size();i++)
+        {
+            sum+=nums[i];
+           int rem=sum-k;
+           if(hash.find(rem)!=hash.end()){
+               cnt+=hash[rem];
+           }
+           hash[sum]++;
+        }
+        return cnt;
+    }
+};
