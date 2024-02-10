@@ -1,0 +1,27 @@
+https://leetcode.com/problems/find-the-kth-largest-integer-in-the-array/
+https://leetcode.com/problems/make-two-arrays-equal-by-reversing-subarrays/
+
+class Solution:
+    def kthLargestNumber(self, nums: List[str], k: int) -> str:
+        n=[]
+        for i in nums:
+            n.append(int(i))
+        return str(sorted(n)[-k])
+
+
+
+class Solution(object):
+    def canBeEqual(self, target, arr):
+        """
+        :type target: List[int]
+        :type arr: List[int]
+        :rtype: bool
+        """
+        target.sort()
+        arr.sort()
+
+        for i in range(len(target)):
+            if target[i] != arr[i] : 
+                return False
+        return True
+        
