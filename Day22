@@ -1,0 +1,29 @@
+https://leetcode.com/problems/contains-duplicate/
+https://leetcode.com/problems/move-zeroes/
+
+
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        nums.sort()
+        n = len(nums)
+        for i in range(0,n-1):
+            if nums[i] == nums[i+1] : 
+                return True 
+        return False
+
+
+class Solution:
+    def moveZeroes(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        count_zeros = 0
+        n = len(nums)
+        
+        for i in range(n - 1, -1, -1):
+            if nums[i] == 0:
+                nums.pop(i)
+                count_zeros += 1
+
+        nums.extend([0] * count_zeros)
+            
