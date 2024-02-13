@@ -1,0 +1,23 @@
+https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+https://leetcode.com/problems/find-peak-element/
+
+class Solution:
+    def findMin(self, nums: List[int]) -> int:
+        for i in range(len(nums)-1):
+            if nums[i]>nums[i+1]:
+                return nums[i+1]
+        return nums[0]
+
+class Solution:
+    def findPeakElement(self, nums: List[int]) -> int:
+        low = 0
+        high = len(nums)-1
+
+        while low<high:
+            mid = (low+high)//2
+
+            if nums[mid] > nums[mid+1] : 
+                high = mid
+            else :
+                low = mid+1
+        return low
