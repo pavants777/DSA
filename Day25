@@ -11,4 +11,7 @@ class Solution:
             reachable = max(reachable, i + nums[i])
         return True
 
-         
+
+
+
+
