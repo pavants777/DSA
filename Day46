@@ -1,0 +1,25 @@
+https://leetcode.com/problems/linked-list-cycle/submissions/1195222285/
+
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    bool hasCycle(ListNode *head) {
+        ListNode* Fast=head;
+        ListNode* Slow=head;
+        while(Fast && Fast->next)
+        {
+            Slow=Slow->next;
+            Fast=Fast->next->next;
+            if(Slow==Fast) return true;
+        }
+        return false;
+    }
+};
