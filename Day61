@@ -1,0 +1,19 @@
+
+
+class Solution {
+public:
+    int findDuplicate(vector<int>& nums) {
+        vector<int> dp(nums.size()+1,0);
+
+        for(auto it:nums){
+            dp[it]+=1;
+        }
+
+        for(int i=1;i<=nums.size();i++){
+            if(dp[i]>1){
+                return i;
+            }
+        }
+        return -1;
+    }
+};
