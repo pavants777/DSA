@@ -1,0 +1,23 @@
+class Solution
+{
+    public:
+    void find(vector<int> &res,Node* root){
+         if(root==nullptr){
+             return;
+         }
+         find(res,root->left);
+         res.push_back(root->data);
+         find(res,root->right);
+    }
+    int absolute_diff(Node *root)
+    {
+        //Your code here
+        vector<int> res;
+        find(res,root);
+        int mini = INT_MAX;
+        for(int i=1;i<res.size();i++){
+            mini = min(res[i]-res[i-1],mini);
+        }
+        return mini;
+    }
+};
